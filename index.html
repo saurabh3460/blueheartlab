@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css"
+    />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+    <!-- script of first banner -->
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+
+    <title>Blue Hear Lab</title>
+
+    <style>
+      #navbar {
+        background-color: #000828;
+      }
+      .uk-logo {
+        color: white;
+      }
+      .uk-logo:hover {
+        color: white;
+      }
+      .uk-navbar-right > ul > li > a {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #dropdown {
+        border: 1px solid #66cbf3;
+        border-radius: 5px;
+        box-shadow: 0px 1px 20px 1px #66cbf3;
+      }
+
+      /* style of first banner */
+
+      /* Header */
+      .large-header {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background: #333;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        z-index: 1;
+      }
+      #large-header {
+        background-image: url("http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/Hi-Tech-Wallpaper-12.jpg");
+      }
+      /*  */
+      .main-title {
+        border-radius: 10px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -40%, 0);
+        transform: translate3d(-50%, -40%, 0);
+      }
+
+      .demo-1 .main-title {
+        text-transform: uppercase;
+        font-size: 4.2em;
+        letter-spacing: 0.1em;
+      }
+      .about-us{
+
+      }
+      .main-title .thin {
+        font-weight: 200;
+      }
+      @media only screen and (max-width: 500px) {
+          .link{
+            font-size: 15px;
+          }
+          .main-title{
+            width: 100px;
+            height: 100px;
+          }
+        }
+      @media only screen and (max-width: 768px) {
+        .demo-1 .main-title {
+          font-size: 3em;
+        }
+      }
+
+      /* end of first banner */
+    </style>
+  </head>
+  <body>
+    <!-- 
+
+        Home
+WINTER TRAINING
+About Us
+Goal
+Our Work
+Lab Program
+Contact
+Internship
+Internet of Things
+Embedded System
+Embedded Workshop
+Web development with django
+
+     -->
+    <nav class="uk-navbar-container" id="navbar" uk-navbar>
+      <div class="uk-navbar-left">
+        <a
+          class="uk-navbar-item uk-logo"
+          href="https://sunvivek10.wixsite.com/blueheartlab"
+          target="blank"
+        >
+          <img
+            src="blue-heart-logo.png"
+            width="50"
+            height="50"
+            alt="Lab's Logo"
+            style="
+            background-color: #66cbf3;
+            border-radius: 7px; padding: 3px;
+            box-shadow: 3px 3px 20px 0px #66cbf3;
+            display: inline;
+            "
+          />
+        </a>
+        <a class="uk-navbar-item uk-logo link" href="https://sunvivek10.wixsite.com/blueheartlab/"  >Blue Heart Lab</a>
+      </div>
+      <!-- Right -->
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#" class="link">Lab Program</a>
+            <div class="uk-navbar-dropdown" id="dropdown">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li class="uk-active"><a href="https://sunvivek10.wixsite.com/blueheartlab/internet-of-things" class="link" >Internet of Things</a></li>
+                <li><a href="https://sunvivek10.wixsite.com/blueheartlab/embedded-system" class="link" >Embedded System</a></li>
+                <li><a href="https://sunvivek10.wixsite.com/blueheartlab/copy-of-embedded-system" class="link" >Embedded Workshop</a></li>
+                <li><a href="https://sunvivek10.wixsite.com/blueheartlab/web-development-django" class="link" >Web development</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+          <!-- <li class="uk-active"><a href="#">Active</a></li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <div id="large-header" class="large-header">
+      <canvas id="demo-canvas"></canvas>
+      <img src="./logom.png" class="main-title" height="200px" width="200px">
+      
+    </div>
+
+  <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" id="about-us" style="background-image: url('https://www.dentons.com/~/media/Images/Website/Background%20Images/Regions/United%20States/US_regional_image_v7.jpg');">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" style="background-color: #00000096;
+    padding: 10px;">
+        <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 0.5;">About Us</h1>
+        <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 0.5;">
+        Blue heart Lab is a creative platform for innovation & technology learning where we provide you an appealing practical experience of latest technology. We offer summer, winter & Lab program for Engineers, Graduates and hobbyists to learn by building  live projects on Embedded System, Internet of Things, Data Analysis. We are looking forward to engage Robotics & programming curriculum for schools also.
+      </p>
+    </div>
+</div>
+
+
+<div class="uk-position-relative uk-visible-toggle uk-light"  tabindex="-1" uk-slider="autoplay: true  autoplay-interval: 2000 center:true">
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+        <li>
+            <div class="uk-panel">
+                <img src="photos/21230922_1957840384430345_2586946254453100799_n.jpg" alt="">
+                
+            </div>
+        </li>
+        <li >
+            <div class="uk-panel">
+                <img src="photos/21270984_1957839891097061_6305057206292434052_n - Copy.jpg" alt="">
+                
+            </div>
+        </li>
+        
+        <li>
+            <div class="uk-panel">
+                <img src="photos/23472348_1983956201818763_5964458655017989342_n (1).jpg" alt="">
+                
+            </div>
+        </li>
+        <li>
+            <div class="uk-panel">
+                <img src="photos/IMG_20170614_102128.jpg" alt="">
+            </div>
+        </li>
+        <li>
+            <div class="uk-panel">
+                <img src="photos/WhatsApp Image 2017-06-21 at 13.29.43.jpeg" alt="">
+            </div>
+        </li>
+    </ul>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+    
+</div>
+<div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url('https://www.dentons.com/-/media/images/website/background-images/landing-pages/whats-different-about-dentons/contact-us/contact3.jpg');">
+    <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical" style="background-color: #00000096;
+    padding: 10px;">
+        <h1 uk-parallax="opacity: 0,1; y: -100,0; scale: 2,1; viewport: 0.5;">contact Us</h1>
+        <p uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.5;">
+          ADDRESS: 3/88 VIJYANT KHAND GOMTI NAGAR LUCKNOW(UP), INDIA
+
+          <br/>TEL: <span style="margin: 2px;">9621559356</span>,<span style="margin: 2px;">9670520418 </span> |  BLUEHEARTLAB@GMAIL.COM
+        </p>
+    </div>
+</div>
+
+    <script>
+      (function() {
+        var width,
+          height,
+          largeHeader,
+          canvas,
+          ctx,
+          points,
+          target,
+          animateHeader = true;
+
+        // Main
+        initHeader();
+        initAnimation();
+        addListeners();
+
+        function initHeader() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          target = { x: width / 2, y: height / 2 };
+
+          largeHeader = document.getElementById("large-header");
+          largeHeader.style.height = height + "px";
+
+          canvas = document.getElementById("demo-canvas");
+          canvas.width = width;
+          canvas.height = height;
+          ctx = canvas.getContext("2d");
+
+          // create points
+          points = [];
+          for (var x = 0; x < width; x = x + width / 20) {
+            for (var y = 0; y < height; y = y + height / 20) {
+              var px = x + (Math.random() * width) / 20;
+              var py = y + (Math.random() * height) / 20;
+              var p = { x: px, originX: px, y: py, originY: py };
+              points.push(p);
+            }
+          }
+
+          // for each point find the 5 closest points
+          for (var i = 0; i < points.length; i++) {
+            var closest = [];
+            var p1 = points[i];
+            for (var j = 0; j < points.length; j++) {
+              var p2 = points[j];
+              if (!(p1 == p2)) {
+                var placed = false;
+                for (var k = 0; k < 5; k++) {
+                  if (!placed) {
+                    if (closest[k] == undefined) {
+                      closest[k] = p2;
+                      placed = true;
+                    }
+                  }
+                }
+
+                for (var k = 0; k < 5; k++) {
+                  if (!placed) {
+                    if (getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                      closest[k] = p2;
+                      placed = true;
+                    }
+                  }
+                }
+              }
+            }
+            p1.closest = closest;
+          }
+
+          // assign a circle to each point
+          for (var i in points) {
+            var c = new Circle(
+              points[i],
+              2 + Math.random() * 2,
+              "rgba(255,255,255,0.3)"
+            );
+            points[i].circle = c;
+          }
+        }
+
+        // Event handling
+        function addListeners() {
+          if (!("ontouchstart" in window)) {
+            window.addEventListener("mousemove", mouseMove);
+          }
+          window.addEventListener("scroll", scrollCheck);
+          window.addEventListener("resize", resize);
+        }
+
+        function mouseMove(e) {
+          var posx = (posy = 0);
+          if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+          } else if (e.clientX || e.clientY) {
+            posx =
+              e.clientX +
+              document.body.scrollLeft +
+              document.documentElement.scrollLeft;
+            posy =
+              e.clientY +
+              document.body.scrollTop +
+              document.documentElement.scrollTop;
+          }
+          target.x = posx;
+          target.y = posy;
+        }
+
+        function scrollCheck() {
+          if (document.body.scrollTop > height) animateHeader = false;
+          else animateHeader = true;
+        }
+
+        function resize() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          largeHeader.style.height = height + "px";
+          canvas.width = width;
+          canvas.height = height;
+        }
+
+        // animation
+        function initAnimation() {
+          animate();
+          for (var i in points) {
+            shiftPoint(points[i]);
+          }
+        }
+
+        function animate() {
+          if (animateHeader) {
+            ctx.clearRect(0, 0, width, height);
+            for (var i in points) {
+              // detect points in range
+              if (Math.abs(getDistance(target, points[i])) < 4000) {
+                points[i].active = 0.3;
+                points[i].circle.active = 0.6;
+              } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+                points[i].active = 0.1;
+                points[i].circle.active = 0.3;
+              } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+                points[i].active = 0.02;
+                points[i].circle.active = 0.1;
+              } else {
+                points[i].active = 0;
+                points[i].circle.active = 0;
+              }
+
+              drawLines(points[i]);
+              points[i].circle.draw();
+            }
+          }
+          requestAnimationFrame(animate);
+        }
+
+        function shiftPoint(p) {
+          TweenLite.to(p, 1 + 1 * Math.random(), {
+            x: p.originX - 50 + Math.random() * 100,
+            y: p.originY - 50 + Math.random() * 100,
+            ease: Circ.easeInOut,
+            onComplete: function() {
+              shiftPoint(p);
+            }
+          });
+        }
+
+        // Canvas manipulation
+        function drawLines(p) {
+          if (!p.active) return;
+          for (var i in p.closest) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.closest[i].x, p.closest[i].y);
+            ctx.strokeStyle = "rgba(156,217,249," + p.active + ")";
+            ctx.stroke();
+          }
+        }
+
+        function Circle(pos, rad, color) {
+          var _this = this;
+
+          // constructor
+          (function() {
+            _this.pos = pos || null;
+            _this.radius = rad || null;
+            _this.color = color || null;
+          })();
+
+          this.draw = function() {
+            if (!_this.active) return;
+            ctx.beginPath();
+            ctx.arc(
+              _this.pos.x,
+              _this.pos.y,
+              _this.radius,
+              0,
+              2 * Math.PI,
+              false
+            );
+            ctx.fillStyle = "rgba(156,217,249," + _this.active + ")";
+            ctx.fill();
+          };
+        }
+
+        // Util
+        function getDistance(p1, p2) {
+          return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+        }
+      })();
+    </script>
+  </body>
+</html>
